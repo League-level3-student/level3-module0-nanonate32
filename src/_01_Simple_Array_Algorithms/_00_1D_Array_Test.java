@@ -30,13 +30,13 @@ public class _00_1D_Array_Test {
 
     @Test
     public void testContains() {
-        int[] arr = {0, 0, 0, 0, 0, 0};
+        Integer[] arr = {0, 0, 0, 0, 0, 0};
         assertTrue(_00_1D_Array_Methods.containsIntValue(arr, 0));
 
-        int[] arr2 = {0, 0, 0, 0, 0, 0};
+        Integer[] arr2 = {0, 0, 0, 0, 0, 0};
         assertFalse(_00_1D_Array_Methods.containsIntValue(arr2, 1));
 
-        int[] arr3 = {0, 1, 2, 3, 4};
+        Integer[] arr3 = {0, 1, 2, 3, 4};
         assertTrue(_00_1D_Array_Methods.containsIntValue(arr3, 4));
     }
 
