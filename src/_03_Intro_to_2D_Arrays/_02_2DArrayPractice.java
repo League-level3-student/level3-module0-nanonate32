@@ -31,8 +31,8 @@ public class _02_2DArrayPractice {
      *          6, 7, 8
      */
     public Integer[][] test1() {
-        
-        return null;
+        Integer [] [] array2D = {{0,1,2}, {3,4,5}, {6,7,8} };
+        return array2D;
     }
     
     /*
@@ -41,8 +41,8 @@ public class _02_2DArrayPractice {
      *          "e", "f", "g", "e"
      */
     public String[][] test2() {
-        
-        return null;
+        String[] [] stringArray2D = {{"a", "b", "c", "d"}, {"e", "f", "g", "h"} };
+        return stringArray2D;
     }
     
     /*
@@ -54,8 +54,8 @@ public class _02_2DArrayPractice {
      *          true, false
      */
     public Boolean[][] test3() {
-        
-        return null;
+        Boolean[] [] booleanArray2D = {{true, false}, {false,false}, {false, true}, {true, true}, {true,false} };
+        return booleanArray2D;
     }
     
     /*
@@ -63,7 +63,9 @@ public class _02_2DArrayPractice {
      * Assume all the elements in the 2D array are initialized to random ints
      * 
      * int[][] grid = new int[2][3];
-     * 
+     *  1,5
+     *  10,2
+     *  9,3
      * 
      * 
      * Show your teacher the grid you created
@@ -74,7 +76,8 @@ public class _02_2DArrayPractice {
      * Assume all the elements in the 2D array are initialized.
      * 
      * Robot[][] robots = new Robot[4][2];
-     * 
+     *          robot, robot, robot, robot
+     *          robot, robot, robot, robot
      * 
      * 
      * Show your teacher the grid you created
