@@ -1,5 +1,10 @@
 package _03_Intro_to_2D_Arrays;
 
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 /*
  *  A 2D array is comparable to a matrix/grid ordered by rows and columns.
  *  A 2D array that holds 3, 1D arrays with each 1D array having 3 elements
@@ -86,7 +91,17 @@ public class _02_2DArrayPractice {
      */
     public Object test4() {
         Object[][] objects = { {null, null, null, null}, {null, null, null, new Object()} };
-        
+      
+                
+              
+        for (int i = 0; i < objects.length; i++) {
+		for (int j = 0; j < objects[i].length; j++) {
+		  if(objects[i][j] != null) {
+		  return objects[i][j];
+			  
+		  }
+		}
+		}
         return null;
     }
     
@@ -96,9 +111,17 @@ public class _02_2DArrayPractice {
      */
     public Object test5() {
         Object[][] objects = { {null, null, new Object(), null}, {null, null, null, null} };
-        
-        return null;
-    }
+        for (int i = 0; i < objects.length; i++) {
+    		for (int j = 0; j < objects[i].length; j++) {
+    		  if(objects[i][j] != null) {
+    		  return objects[i][j];
+    			  
+    		  }
+    		}
+    		}
+            return null;
+        }
+     
     
     /*
      * Write an algorithm to return the sum of all the numbers in the
@@ -107,7 +130,7 @@ public class _02_2DArrayPractice {
     public Integer test6() {
         int[][] nums = { {8, 7, 6, 5}, {4, 3}, {2, 1, 0} };
         
-        return null;
+         return 
     }
     
     /*
@@ -117,7 +140,7 @@ public class _02_2DArrayPractice {
     public Integer test7() {
         int[][] nums = { {8, 7, 6, 5}, {4, 3}, {2, 1, 0} };
         
-        return null;
+        return nums[0][0] + nums [1][0] + nums [2][0];
     }
     
     /*
