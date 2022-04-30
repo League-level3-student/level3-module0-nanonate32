@@ -131,9 +131,16 @@ public class _02_2DArrayPractice {
      * first row (row 0)
      */
     public Integer test6() {
+    	int sumRow = 0;
         int[][] nums = { {8, 7, 6, 5}, {4, 3}, {2, 1, 0} };
-        
-         return 
+        	for (int i = 0; i < nums.length; i++) {
+        		
+				for (int j = 0; j < nums.length; j++) {
+					sumRow = sumRow + nums[0][j];
+					return sumRow;
+				}
+			}
+        return sumRow;
     }
     
     /*
@@ -152,7 +159,16 @@ public class _02_2DArrayPractice {
      */
     public Integer getSumByRow(int[][] matrix, int row) {
         
-        return null;
+    	int sumRow = 0;
+        int[][] nums = { {8, 7, 6, 5}, {4, 3}, {2, 1, 0} };
+        	for (int i = 0; i < nums.length; i++) {
+        		
+				for (int j = 0; j < nums.length; j++) {
+					sumRow = sumRow + nums[j][i];
+					return sumRow;
+				}
+			}
+        return sumRow;
     }
     
     /*
