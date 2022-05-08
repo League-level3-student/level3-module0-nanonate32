@@ -133,13 +133,13 @@ public class _02_2DArrayPractice {
     public Integer test6() {
     	int sumRow = 0;
         int[][] nums = { {8, 7, 6, 5}, {4, 3}, {2, 1, 0} };
-        	for (int i = 0; i < nums.length; i++) {
+        	
         		
-				for (int j = 0; j < nums.length; j++) {
+				for (int j = 0; j < nums[0].length; j++) {
 					sumRow = sumRow + nums[0][j];
-					return sumRow;
+					
 				}
-			}
+			
         return sumRow;
     }
     
@@ -178,7 +178,7 @@ public class _02_2DArrayPractice {
     public Integer getSumByColumn(int[][] matrix, int col) {
     	int sumCol = 0;
         
-    	for (int i = 0; i < matrix[col].length; i++) {
+    	for (int i = 0; i < matrix.length; i++) {
     		
 			
 				sumCol = sumCol + matrix[i][col];
@@ -209,9 +209,10 @@ public class _02_2DArrayPractice {
      *    boundaries, return null.
      */
     public Integer getEastNeighbor(int[][] matrix, int row, int col) {
-    	
-    	if(matrix[row][col+1] > 0 && col+1 < matrix[col].length ) {
+    
+    	if(col+1 >= 0 && col+1 < matrix[col].length ) {
     		 int value = matrix[row][col+1]; 
+    			System.out.println(value);
     		 return value;
     	}
         
@@ -223,17 +224,30 @@ public class _02_2DArrayPractice {
     }
     
     public Integer getWestNeighbor(int[][] matrix, int row, int col) {
-        
+    	if(col-1 >= 0 && col-1 < matrix[col].length ) {
+   		 int value = matrix[row][col-1]; 
+   			System.out.println(value);
+   		 return value;
+   	}
+    	
         return null;
     }
     
     public Integer getNorthNeighbor(int[][] matrix, int row, int col) {
-        
+    	if(row-1 >= 0 && row-1 < matrix.length ) {
+      		 int value = matrix[row-1][col]; 
+      			System.out.println(value);
+      		 return value;
+      	}
         return null;
     }
     
     public Integer getSouthNeighbor(int[][] matrix, int row, int col) {
-        
+    	if(row+1 >= 0 && row+1 < matrix.length ) {
+     		 int value = matrix[row+1][col]; 
+     			System.out.println(value);
+     		 return value;
+     	}
         return null;
     }
 }
