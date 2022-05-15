@@ -21,8 +21,8 @@ public class CrazyDigitalPainting {
         //    pattern:
             
                  for (int i = 0; i < colors.length; i++) {
-                	 for (int j = 0; j < colors.length; j++) {
-						colors = new Color[400][500];
+                	 for (int j = 0; j < colors[0].length; j++) {
+						
 					
 				  
 				
@@ -32,9 +32,12 @@ public class CrazyDigitalPainting {
                  }
         // 6. Use the ColorArrayDisplayer class to call the displayColorsAsImage method 
         //    to show off your picture.
+                
+                 ColorArrayDisplayer.displayColorsAsImage(colors);
     }
 
     public static void main(String[] args) {
+    	
         new CrazyDigitalPainting();
     }
 }
