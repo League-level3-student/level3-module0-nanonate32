@@ -17,7 +17,7 @@ public class WorldPanel extends JPanel implements MouseListener, ActionListener 
     private int cellSize;
 
     private Timer timer;
-Cell cell = new Cell(1,1,1);
+
     // 1. Create a 2D array of Cells. Do not initialize it.
         Cell[][] cells;
 
@@ -28,15 +28,15 @@ Cell cell = new Cell(1,1,1);
         this.cellsPerRow = cpr;
 
         // 2. Calculate the cell size.
-              cellSize = h/cpr;
+              cellSize = h/cellsPerRow;
         // 3a. Initialize the cell array to the appropriate size.
-              cells = new Cell[w][h];
+              cells = new Cell[cellsPerRow][cellsPerRow];
         // 3b. Iterate through the array and initialize each cell.
         //    Don't forget to consider the cell's dimensions when 
         //    passing in the location.
             for (int i = 0; i < cells.length; i++) {
-			  for (int j = 0; j < cells.length; j++) {
-				cells[w][h] = new Cell(w,h,cpr);
+			  for (int j = 0; j < cells[0].length; j++) {
+				cells[i][j] = new Cell(j*cellSize, i*cellSize, cellSize);
 			}
 			}
     }
@@ -45,14 +45,14 @@ Cell cell = new Cell(1,1,1);
         // 4. Iterate through each cell and randomly set each
         //    cell's isAlive memeber to true of false
               for (int i = 0; i < cells.length; i++) {
-				for (int j = 0; j < cells.length; j++) {
+				for (int j = 0; j < cells[0].length; j++) {
 					Random random = new Random();
-				int cellValue = random.nextInt(1);
+				int cellValue = random.nextInt(2);
 				if(cellValue == 0) {
-					cell.isAlive = true;
+					cells[i][j].isAlive = true;
 				}
-				if(cellValue == 1) {
-					cell.isAlive = false;
+				else {
+					cells[i][j].isAlive = false;
 				}
 				}
 			}
@@ -62,8 +62,8 @@ Cell cell = new Cell(1,1,1);
     public void clearCells() {
         // 5. Iterate through the cells and set them all to dead.
              for (int i = 0; i < cells.length; i++) {
-				for (int j = 0; j < cells.length; j++) {
-				 cell.isAlive = false;
+				for (int j = 0; j < cells[0].length; j++) {
+				 cells[i][j].isAlive = false;
 				}
 			}
         repaint();
@@ -85,7 +85,7 @@ Cell cell = new Cell(1,1,1);
     public void paintComponent(Graphics g) {
         // 6. Iterate through the cells and draw them all
          for (int i = 0; i < cells.length; i++) {
-			for (int j = 0; j < cells[i].length; j++) {
+			for (int j = 0; j < cells[0].length; j++) {
 				cells[i][j].draw(g);
 			}
 		}
@@ -101,8 +101,8 @@ Cell cell = new Cell(1,1,1);
         //    using the getLivingNeighbors method.
     	int[][] livingNeighbors = new int[cellsPerRow][cellsPerRow];
 
-    	for (int i = 0; i < cells.length; i++) {
-			for (int j = 0; j < cells.length; j++) {
+    	for (int i = 0; i < cellsPerRow; i++) {
+			for (int j = 0; j < cellsPerRow; j++) {
 				  livingNeighbors[i][j] = getLivingNeighbors(cells, i, j);
 			}
 		}
