@@ -179,7 +179,14 @@ public class WorldPanel extends JPanel implements MouseListener, ActionListener 
         //    cellSize, meaning it's possible to click inside of a cell. You
         //    have to determine the cell that was clicked from the pixel
         //    location and toggle the 'isAlive' variable for that cell.
-
+           
+           if(cells[e.getX()/cellSize][e.getX()/cellSize].isAlive) {
+        	   cells[e.getX()/cellSize][e.getY()/cellSize].isAlive = false;
+           }
+           if(cells[e.getX()/cellSize][e.getX()/cellSize].isAlive == false) {
+        	   cells[e.getX()/cellSize][e.getY()/cellSize].isAlive = true;
+           }
+           //cells[e.getX()/cellSize].isAlive = !cells[e.getY()/cellSize].isAlive;
         repaint();
     }
 
