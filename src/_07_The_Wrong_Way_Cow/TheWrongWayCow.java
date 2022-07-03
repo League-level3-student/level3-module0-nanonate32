@@ -49,22 +49,60 @@
 package _07_The_Wrong_Way_Cow;
 
 public class TheWrongWayCow {
-
+  int countN = 0;
+  int countS = 0;
+  int countE = 0;
+  int countW = 0;
     public static int[] findWrongWayCow(final char[][] field) {
         // Fill in the code to return the [col, row] coordinate position of the
         // head (letter 'c') of the wrong way cow!
     	      		for (int i = 0; i < field.length; i++) {
     	      			for (int j = 0; i < field.length; i++) {
         	      			if(field[i][j] == 'c') {
+        	      				
+        	      				getEastNeighbor(field,i,j);	
         	      				return new int[]{i,j};
-        	      						        	      			
+        	      	                    			
     					}	
 					}	
     	      		
     			  } 
     			
         return null;
-    //}
-//}
+    
+
 }
+    public static Integer getEastNeighbor(char[][] matrix, int row, int col) {
+        
+    	if(col+1 >= 0 && col+1 < matrix[col].length ) {
+    		 int value = matrix[row][col+1]; 
+    			System.out.println(value);
+    		 return value;
+    	}
+          return null;
+    } 
+    public Integer getWestNeighbor(int[][] matrix, int row, int col) {
+    	if(col-1 >= 0 && col-1 < matrix[col].length ) {
+   		 int value = matrix[row][col-1]; 
+   			System.out.println(value);
+   		 return value;
+   	}
+    	  return null;
+    }
+    public Integer getNorthNeighbor(int[][] matrix, int row, int col) {
+    	if(row-1 >= 0 && row-1 < matrix.length ) {
+      		 int value = matrix[row-1][col]; 
+      			System.out.println(value);
+      		 return value;
+      	}
+        return null;
+    }
+    public Integer getSouthNeighbor(int[][] matrix, int row, int col) {
+    	if(row+1 >= 0 && row+1 < matrix.length ) {
+     		 int value = matrix[row+1][col]; 
+     			System.out.println(value);
+     		 return value;
+     	}
+        return null;
+    }
 }
